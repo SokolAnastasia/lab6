@@ -1,0 +1,24 @@
+def find_repeated_letters(text):
+    text = text.replace(" ", "")  # Видалення пробілів із тексту
+    letters_count = {}
+    
+    # Лічильник кількості кожної літери в тексті
+    for char in text:
+        if char.isalpha():  # Перевірка, чи символ - літера
+            if char in letters_count:
+                letters_count[char] += 1
+            else:
+                letters_count[char] = 1
+    
+    repeated_letters = [char for char, count in letters_count.items() if count >= 2]
+    
+    if repeated_letters:
+        print("Літери, які зустрічаються не менше двох разів:", ', '.join(repeated_letters))
+    else:
+        print("У тексті немає літер, які зустрічаються не менше двох разів.")
+
+# Введення тексту користувачем
+input_text = input("Введіть текст з латинських літер: ")
+
+# Виклик функції для пошуку повторюваних літер
+find_repeated_letters(input_text)

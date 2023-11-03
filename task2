@@ -1,0 +1,18 @@
+def swap_elements_between_odd_even_indices(user_list):
+    # Перевірка на непарну кількість елементів у списку
+    if len(user_list) % 2 != 0:
+        user_list.append(None)  # Якщо кількість елементів непарна, додаємо None
+
+    for i in range(0, len(user_list) - 1, 2):
+        user_list[i], user_list[i + 1] = user_list[i + 1], user_list[i]
+
+    print("Список після заміни місцями елементів з парними і непарними індексами:", user_list)
+
+# Отримання списку від користувача
+user_input = input("Введіть елементи списку через пробіл: ").split()
+
+# Перевірка на введення елементів користувачем
+if len(user_input) > 0:
+    swap_elements_between_odd_even_indices(user_input)
+else:
+    print("Список порожній. Будь ласка, введіть хоча б один елемент.")

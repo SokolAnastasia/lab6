@@ -1,0 +1,17 @@
+def insert_elements_at_even_positions(user_list):
+    elements_to_insert = input("Введіть елементи для вставки через пробіл: ").split()
+    index = 0
+    for element in elements_to_insert:
+        user_list.insert(index * 2, element)
+        index += 1
+
+    print("Список після вставки нових елементів на парні позиції:", user_list)
+
+# Отримання списку від користувача
+user_input = input("Введіть елементи списку через пробіл: ").split()
+
+# Перевірка на введення елементів користувачем
+if len(user_input) > 0:
+    insert_elements_at_even_positions(user_input)
+else:
+    print("Список порожній. Будь ласка, введіть хоча б один елемент.")
